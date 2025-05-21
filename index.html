@@ -5,12 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Владислав Бевза — CV</title>
 <style>
-  :root {
-    --accent:#4a6cff;
-    --text:#222;
-    --sub:#555;
-    --bg:#f7f9ff;
-  }
+  :root {--accent:#4a6cff;--text:#222;--sub:#555;--bg:#f7f9ff;}
   *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;}
   body{background:var(--bg);color:var(--text);line-height:1.5;padding:24px;}
   .wrapper{max-width:800px;margin:0 auto;background:#fff;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.08);overflow:hidden;}
@@ -40,18 +35,19 @@
 
     <section>
       <h3>Резюме</h3>
-      <p>Експериментую та працюю з великими мовними моделями з 2020 року. Фокус&nbsp;— проектування промптів, експерименти з RAG‑системами, багатомодельні ланцюжки та логічних ланцюжків під задачі. логічна постановка, визначення найкоротших шляхів, автоматизація та тестування ідей&nbsp;— основні напрями моєї діяльності.</p>
+      <p>Понад 8 років працював у <strong>media‑production</strong> (режисура, монтаж, sound design, post‑production). Із 2020 р. <strong>повністю переключився</strong> на світ LLM, який захопив своєю перспективністю. Мій фокус — проектування промптів, багатомодельні та логічні ланцюжки, автоматизація процесів і швидка перевірка ідей.</p>
     </section>
 
     <section>
       <h3>Навички</h3>
       <ul>
         <li><strong>Prompt Engineering:</strong> one‑shot, few‑shot, chain‑of‑thought, експерименти з RAG</li>
-        <li><strong>Моделі:</strong> OpenAI (GPT‑3.5/4), Google Gemini, Claude 3, Mistral, DeepSeek, Qwen, Llama</li>
-        <li><strong>Поліглотні завдання:</strong> юридичні / художні переклади EN ⇄ UA/RU</li>
-        <li><strong>Python (база):</strong> API‑запити, невеликі скрипти, локальний inference моделей</li>
-        <li><strong>Локальні моделі:</strong> Mistral, Llama, Flux, Stable Diffusion, ComfyUI</li>
+        <li><strong>Моделі:</strong> OpenAI (всі), Google Gemini, Claude, Mistral, DeepSeek, Llama</li>
+        <li><strong>Поліглотні завдання:</strong> юридичні / художні переклади ENG, ESP / ROM, UA, RU</li>
+        <li><strong>Python (база):</strong> API‑запити, невеликі скрипти, локальний inference моделей, парсери</li>
+        <li><strong>Локальні моделі та інструменти:</strong> Mistral, Llama, Flux, Stable Diffusion, ComfyUI, тестування MCP‑серверу (Blender, Ableton)</li>
         <li><strong>No‑code / low‑code:</strong> Postman, Google Sheets, n8n</li>
+        <li><strong>Media‑stack:</strong> DaVinci Resolve, Adobe Audition, Premiere Pro, After Effects (для фонового розуміння домену)</li>
       </ul>
     </section>
 
@@ -59,28 +55,37 @@
       <h3>Досвід</h3>
       <div class="two-col">
         <div>
-          <h4>Freelance / Консалтинг<br><small>Prompt Engineer&nbsp;• 2020&nbsp;– дотепер</small></h4>
+          <h4>Freelance / Консалтинг<br><small>Prompt Engineer • 2020 – дотепер</small></h4>
           <ul>
-            <li>Створював проінструктовані бот‑інтерфейси для генерації зображень, відео, тексту та музики — допомога креаторам пришвидшити роботу.</li>
+            <li>Створював проінструктовані бот‑інтерфейси для генерації зображень, відео, тексту та музики — допомога креаторам пришвидшити роботу.</li>
             <li>Налаштовував no‑code парсери соцмереж (YouTube, Instagram, TikTok Shorts) із щотижневими оновленнями даних.</li>
             <li>Розробив приватні чат‑боти психологічної підтримки для ветеранів.</li>
-            <li>Експерименти з CCD‑алгоритмом для глибокого one‑shot брейншторму.</li>
+            <li>Експерименти з <strong>CCD‑алгоритмом</strong> для глибокого one‑shot брейншторму.</li>
+            <li>Комбінував 3‑4 моделі з fallback‑логікою, будував метрики під задачу.</li>
           </ul>
         </div>
         <div>
-          <h4>Flymy.ai<br><small>Business Developer&nbsp;• 2022</small></h4>
+          <h4>Flymy.ai<br><small>Business Developer • 2022</small></h4>
           <ul>
-            <li>Визначав вимоги до LLM‑функцій, збирав дані через власні парсери та передавав бекенду для інтеграцій.</li>
-            <li>Координував комунікацію між продактом та розробкою щодо пріоритетів AI‑фіч.</li>
+            <li>Збирав і парсив дані різних бізнесів для встановлення партнерських звʼязків; передавав бекенду структуру даних та LLM‑вимоги.</li>
+            <li>Координував комунікацію між продактом і розробкою щодо пріоритетів AI‑фіч.</li>
           </ul>
         </div>
+      </div>
+      <div style="margin-top:24px;">
+        <h4>Media Production • 2012 – 2020</h4>
+        <ul>
+          <li>Режисер та режисер‑постановник рекламних та музичних відео.</li>
+          <li>Full cycle post-production services.</li>
+          <li>Керував командами до 10 осіб, повний цикл від концепту до фінішного мастера.</li>
+        </ul>
       </div>
     </section>
 
     <section>
       <h3>Освіта & Самоосвіта</h3>
       <ul>
-        <li>Постійне самостійне навчання з матеріалів OpenAI, Google, Anthropic (Prompt Engineering, RAG, LLM Safety).</li>
+        <li>Постійне самостійне навчання: курси та матеріали OpenAI, Google, Anthropic (Prompt Engineering, RAG, LLM Safety).</li>
       </ul>
     </section>
 
@@ -89,7 +94,7 @@
       <ul>
         <li>Українська — рідна</li>
         <li>Російська — вільно</li>
-        <li>English — C1 (робочий рівень)</li>
+        <li>English — C1</li>
       </ul>
     </section>
   </div>
