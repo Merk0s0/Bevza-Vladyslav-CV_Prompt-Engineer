@@ -15,24 +15,29 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif}
 body{background:var(--bg);color:var(--text);line-height:1.55;}
-/* HERO */
+
+/* HERO ─────────────────────────────────────────── */
 .hero{
   background:linear-gradient(135deg,var(--accent) 0%,var(--accent-light) 100%);
-  color:#fff;padding:40px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;
+  color:#fff;padding:40px 40px 100px;          /* ↑ більше відступу знизу */
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;
 }
 .hero img{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 4px 14px rgba(0,0,0,.18);}
 .hero h1{font-size:2rem;letter-spacing:1px;}
 .hero h2{font-size:1.05rem;font-weight:400;opacity:.9}
-/* GRID */
+
+/* WRAPPER ─────────────────────────────────────── */
 .wrapper{
-  max-width:1100px;margin:-60px auto 60px;background:var(--panel);
-  display:grid;grid-template-columns:320px 1fr;border-radius:var(--radius);
-  box-shadow:var(--shadow);overflow:hidden;transition:box-shadow .4s;
+  max-width:1100px;margin:-70px auto 60px;     /* ↓ менше перекриття білого блоку */
+  background:var(--panel);display:grid;grid-template-columns:320px 1fr;
+  border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+  transition:box-shadow .4s;
 }
 .wrapper:hover{box-shadow:0 10px 28px rgba(0,0,0,.12)}
-@media(max-width:900px){.wrapper{grid-template-columns:1fr}}
+
 /* SIDEBAR */
-aside{background:var(--bg);padding:36px;opacity:0;transform:translateX(-40px);transition:all .9s cubic-bezier(.2,.6,.3,1)}
+aside{background:var(--bg);padding:36px;opacity:0;transform:translateX(-40px);
+       transition:all .9s cubic-bezier(.2,.6,.3,1)}
 aside.reveal{opacity:1;transform:translateX(0)}
 aside h3{font-size:1rem;margin-bottom:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.5px}
 aside ul{list-style:none;margin-bottom:26px}
@@ -40,6 +45,7 @@ aside li{margin:6px 0;font-size:.95rem;color:var(--sub)}
 aside a{color:var(--text);text-decoration:none;position:relative}
 aside a::after{content:'';position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--accent);transition:width .3s}
 aside a:hover::after{width:100%}
+
 /* MAIN */
 main{padding:44px 52px}
 section{margin-bottom:48px;opacity:0;transform:translateY(26px);transition:all .9s cubic-bezier(.2,.6,.3,1)}
@@ -47,16 +53,28 @@ section.reveal{opacity:1;transform:translateY(0)}
 section h3{font-size:1.25rem;margin-bottom:14px;color:var(--accent);text-transform:uppercase;letter-spacing:.55px}
 ul.square{margin-left:18px;list-style:square}
 ul.square li{margin-bottom:6px;font-size:.95rem}
+
+/* ──────────── MOBILE ──────────── */
+@media(max-width:900px){
+  .wrapper{grid-template-columns:1fr;margin:-40px 16px 40px;border-radius:0} /* вертикально й без округлень */
+}
+@media(max-width:600px){
+  .hero{padding:28px 20px 80px}
+  .hero img{width:90px;height:90px}
+  .hero h1{font-size:1.6rem}
+  .hero h2{font-size:.9rem}
+  main{padding:32px 24px}
+  aside{padding:24px}
+}
 </style>
 </head>
 <body>
 
 <!-- ===== HERO ===== -->
 <header class="hero">
-  <!-- замініть src на свою фотографію -->
   <img src="https://i.postimg.cc/Fsgq9MJg/1721313573084.jpg" alt="Владислав Бевза">
   <h1>Владислав Бевза</h1>
-  <h2>Prompt / AI Logic Engineer (no‑code)</h2>
+  <h2>Prompt / AI Logic Engineer (no‑code)</h2>
 </header>
 
 <div class="wrapper">
@@ -99,7 +117,7 @@ ul.square li{margin-bottom:6px;font-size:.95rem}
         <li><strong>Поліглотні задачі:</strong> юридичні та художні переклади ENG, ESP / ROM, UA, RU</li>
         <li><strong>Python (базово):</strong> API‑запити, скрипти, локальний inference, парсери</li>
         <li><strong>Локальні інструменти:</strong> Mistral, Llama, Flux, Stable Diffusion, ComfyUI, MCP‑сервери (Blender, Ableton)</li>
-        <li><strong>No‑code / low‑code:</strong> Postman, Google Sheets, n8n</li>
+        <li><strong>No‑code / low‑code:</strong> Postman, Google Sheets, n8n</li>
         <li><strong>Media‑stack:</strong> DaVinci Resolve, Adobe Audition / Premiere Pro / After Effects</li>
       </ul>
     </section>
@@ -134,18 +152,18 @@ ul.square li{margin-bottom:6px;font-size:.95rem}
     <section>
       <h3>Освіта & Самоосвіта</h3>
       <ul class="square">
-        <li><strong>Магістр психології (широкий профіль) </strong> — КПНУ ім. І. Огієнка (2018)</li>
-        <li>Постійне само‑навчання: OpenAI, Google, Anthropic (Prompt Engineering, RAG, LLM Safety)</li>
+        <li><strong>Магістр психології (широкий профіль)</strong> — КПНУ ім. І. Огієнка (2018)</li>
+        <li>Постійне само‑навчання: OpenAI, Google, Anthropic — Prompt Engineering, RAG, LLM Safety</li>
       </ul>
     </section>
   </main>
 </div>
 
 <script>
-/* Reveal-on-scroll (0.9s) */
+/* Reveal‑on‑scroll (0.9s) */
 const observer=new IntersectionObserver(
- e=>e.forEach(v=>v.isIntersecting&&v.target.classList.add('reveal')),
- {threshold:.15});
+  entries=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('reveal')),
+  {threshold:.15});
 document.querySelectorAll('section,#sidebar').forEach(el=>observer.observe(el));
 </script>
 </body>
