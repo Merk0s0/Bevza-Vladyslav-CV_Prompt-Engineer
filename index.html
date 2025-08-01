@@ -12,10 +12,16 @@
             --bg-gradient-end: #16213e;
             --card-bg: rgba(255, 255, 255, 0.05);
             --text-primary: #e0e0e0;
-            --text-secondary: #a0a0b0;
+            /* IMPROVED: Increased brightness for better contrast (WCAG AA/AAA compliant) */
+            --text-secondary: #b5b5c5; 
             --accent: #0f8b8d;
             --accent-light: #58a6ff;
             --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* IMPROVED: Smoother scrolling experience */
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -23,11 +29,15 @@
             background: linear-gradient(135deg, var(--bg-gradient-end), var(--bg-gradient-start));
             color: var(--text-primary);
             margin: 0;
-            padding: 40px 20px;
+            /* IMPROVED: Better padding for various screen sizes */
+            padding: 30px 15px;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Align to top for better scroll on mobile */
             min-height: 100vh;
+            /* ADDED: Base font size for better rem calculation and readability */
+            font-size: 16px; 
+            line-height: 1.6; /* ADDED: Base line height */
         }
 
         .resume-container {
@@ -69,26 +79,24 @@
             object-fit: cover;
             border: 3px solid var(--accent);
             animation: popIn 0.5s ease-out 0.5s both;
+            flex-shrink: 0; /* ADDED: Prevents image from shrinking */
         }
 
         @keyframes popIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
+            from { transform: scale(0); }
+            to { transform: scale(1); }
         }
 
         .header-info h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.25rem; /* 36px */
             color: #ffffff;
+            line-height: 1.2;
         }
 
         .header-info .title {
             margin: 5px 0 15px;
-            font-size: 1.2rem;
+            font-size: 1.125rem; /* 18px */
             color: var(--accent);
             font-weight: 500;
         }
@@ -110,7 +118,6 @@
             opacity: 0;
         }
         
-        /* Staggered animation for sections */
         section:nth-of-type(1) { animation-delay: 0.2s; }
         section:nth-of-type(2) { animation-delay: 0.3s; }
         section:nth-of-type(3) { animation-delay: 0.4s; }
@@ -118,19 +125,12 @@
         section:nth-of-type(5) { animation-delay: 0.6s; }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.5rem; /* 24px */
             color: var(--accent-light);
             border-bottom: 2px solid var(--accent);
             padding-bottom: 10px;
@@ -138,8 +138,8 @@
         }
 
         .profile-text {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1rem; /* 16px */
+            line-height: 1.7; /* IMPROVED: Slightly more space for readability */
         }
 
         .competencies-grid {
@@ -152,7 +152,7 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 8px 15px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.875rem; /* 14px */
             transition: all 0.3s ease;
         }
 
@@ -175,7 +175,7 @@
 
         .job-item h3 {
             margin: 0 0 5px 0;
-            font-size: 1.1rem;
+            font-size: 1.1rem; /* 17.6px */
             color: var(--text-primary);
         }
 
@@ -186,7 +186,7 @@
         
         .job-item .date {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.9rem; /* 14.4px */
             margin-bottom: 10px;
         }
 
@@ -197,28 +197,44 @@
 
         .job-item li {
             margin-bottom: 10px;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--text-secondary);
+            font-size: 1rem; /* 16px */
         }
         
         .languages p {
             margin: 5px 0;
         }
 
-        /* Responsive Design */
+        /* --- IMPROVED RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             body {
                 padding: 20px 10px;
+                align-items: flex-start;
             }
             .resume-container {
-                padding: 20px;
+                padding: 25px;
             }
             .header {
                 flex-direction: column;
                 text-align: center;
+                gap: 20px;
+            }
+            .profile-photo {
+                width: 100px;
+                height: 100px;
             }
             .header-info h1 {
-                font-size: 2rem;
+                font-size: 1.8rem; /* Adjusted for mobile */
+            }
+            .header-info .title {
+                font-size: 1rem; /* Adjusted for mobile */
+            }
+            h2 {
+                font-size: 1.3rem; /* Adjusted for mobile */
+            }
+            .job-item h3 {
+                font-size: 1rem; /* Adjusted for mobile */
             }
         }
     </style>
