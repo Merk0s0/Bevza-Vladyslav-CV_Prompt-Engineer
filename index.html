@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV: AI Prompt Engineer & Creative Technologist</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+    <!-- ADDED: Meta tags for SEO and Social Sharing -->
+    <meta name="description" content="The CV of Vladyslav Bevza, an AI Prompt Engineer and Creative Technologist specializing in human-centered AI.">
+    <meta property="og:title" content="CV: Vladyslav Bevza - AI Prompt Engineer">
+    <meta property="og:description" content="Specializing in translating complex human concepts into structured AI outputs.">
+    <meta property="og:image" content="https://i.postimg.cc/Fsgq9MJg/1721313573084.jpg">
+    <meta property="og:url" content="https://bevza-vladyslav.github.io/Bevza-Vladyslav-CV_Prompt-Engineer/">
+    <meta name="twitter:card" content="summary_large_image">
 
+    <title>CV: AI Prompt Engineer & Creative Technologist</title>
+    
+    <!-- ADDED: Preconnect for Google Fonts performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
         :root {
             --bg-gradient-start: #1a1a2e;
             --bg-gradient-end: #16213e;
             --card-bg: rgba(255, 255, 255, 0.05);
             --text-primary: #e0e0e0;
-            /* IMPROVED: Increased brightness for better contrast (WCAG AA/AAA compliant) */
             --text-secondary: #b5b5c5; 
             --accent: #0f8b8d;
             --accent-light: #58a6ff;
             --border-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* IMPROVED: Smoother scrolling experience */
         html {
             scroll-behavior: smooth;
         }
@@ -29,15 +39,13 @@
             background: linear-gradient(135deg, var(--bg-gradient-end), var(--bg-gradient-start));
             color: var(--text-primary);
             margin: 0;
-            /* IMPROVED: Better padding for various screen sizes */
             padding: 30px 15px;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align to top for better scroll on mobile */
+            align-items: flex-start;
             min-height: 100vh;
-            /* ADDED: Base font size for better rem calculation and readability */
             font-size: 16px; 
-            line-height: 1.6; /* ADDED: Base line height */
+            line-height: 1.6;
         }
 
         .resume-container {
@@ -53,14 +61,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .header {
@@ -79,7 +81,7 @@
             object-fit: cover;
             border: 3px solid var(--accent);
             animation: popIn 0.5s ease-out 0.5s both;
-            flex-shrink: 0; /* ADDED: Prevents image from shrinking */
+            flex-shrink: 0;
         }
 
         @keyframes popIn {
@@ -89,14 +91,14 @@
 
         .header-info h1 {
             margin: 0;
-            font-size: 2.25rem; /* 36px */
+            font-size: 2.25rem;
             color: #ffffff;
             line-height: 1.2;
         }
 
         .header-info .title {
             margin: 5px 0 15px;
-            font-size: 1.125rem; /* 18px */
+            font-size: 1.125rem;
             color: var(--accent);
             font-weight: 500;
         }
@@ -130,7 +132,7 @@
         }
 
         h2 {
-            font-size: 1.5rem; /* 24px */
+            font-size: 1.5rem;
             color: var(--accent-light);
             border-bottom: 2px solid var(--accent);
             padding-bottom: 10px;
@@ -138,28 +140,8 @@
         }
 
         .profile-text {
-            font-size: 1rem; /* 16px */
-            line-height: 1.7; /* IMPROVED: Slightly more space for readability */
-        }
-
-        .competencies-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .competency-tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.875rem; /* 14px */
-            transition: all 0.3s ease;
-        }
-
-        .competency-tag:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-2px);
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .job-item {
@@ -175,7 +157,7 @@
 
         .job-item h3 {
             margin: 0 0 5px 0;
-            font-size: 1.1rem; /* 17.6px */
+            font-size: 1.1rem;
             color: var(--text-primary);
         }
 
@@ -186,7 +168,7 @@
         
         .job-item .date {
             color: var(--text-secondary);
-            font-size: 0.9rem; /* 14.4px */
+            font-size: 0.9rem;
             margin-bottom: 10px;
         }
 
@@ -199,42 +181,57 @@
             margin-bottom: 10px;
             line-height: 1.6;
             color: var(--text-secondary);
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
         }
         
         .languages p {
             margin: 5px 0;
         }
 
-        /* --- IMPROVED RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
+            body { padding: 20px 10px; align-items: flex-start; }
+            .resume-container { padding: 25px; }
+            .header { flex-direction: column; text-align: center; gap: 20px; }
+            .profile-photo { width: 100px; height: 100px; }
+            .header-info h1 { font-size: 1.8rem; }
+            .header-info .title { font-size: 1rem; }
+            h2 { font-size: 1.3rem; }
+            .job-item h3 { font-size: 1rem; }
+        }
+
+        /* ADDED: Print-friendly styles */
+        @media print {
             body {
-                padding: 20px 10px;
-                align-items: flex-start;
+                background: none;
+                color: #000;
+                padding: 0;
+                font-size: 12pt;
             }
             .resume-container {
-                padding: 25px;
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                backdrop-filter: none;
             }
-            .header {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
+            .header, .job-item {
+                border-color: #ccc;
             }
             .profile-photo {
-                width: 100px;
-                height: 100px;
+                border-color: #000;
             }
-            .header-info h1 {
-                font-size: 1.8rem; /* Adjusted for mobile */
+            h1, h2, h3, .job-item .company {
+                color: #000;
             }
-            .header-info .title {
-                font-size: 1rem; /* Adjusted for mobile */
+            section {
+                animation: none;
+                opacity: 1;
             }
-            h2 {
-                font-size: 1.3rem; /* Adjusted for mobile */
+            a {
+                color: #000;
+                text-decoration: none;
             }
-            .job-item h3 {
-                font-size: 1rem; /* Adjusted for mobile */
+            .contact-info a::after {
+                content: " (" attr(href) ")";
             }
         }
     </style>
@@ -258,23 +255,29 @@
             <section class="profile">
                 <h2>Profile</h2>
                 <p class="profile-text">
-                    An enthusiastic and analytical AI Prompt Engineer with a background in Psychology (M.A.) and wide media production expirience. Specializes in translating complex concepts into structured, clear brand communication and audience impression. Passionate about building human-centered AI tools that bridge technology and human development.
-					
-					
-					<br> <br> Well-versed in the startup ecosystem, I am highly effective and comfortable in fast-paced, ever-changing environments.
+                    An enthusiastic and analytical AI Prompt Engineer with a background in Psychology (M.A.) and wide media production experience. Specializes in translating complex concepts into structured, clear brand communication and audience impression. Passionate about building human-centered AI tools that bridge technology and human development.
+					<br><br>
+					Well-versed in the startup ecosystem, I am highly effective and comfortable in fast-paced, ever-changing environments.
 				</p>
             </section>
 
-            <section class="competencies">
-                <h2>Core Competencies</h2>
-                <div class="competencies-grid">
-                    <span class="competency-tag">Prompt Engineering</span>
-                    <span class="competency-tag">Systematic Experimentation</span>
-                    <span class="competency-tag">No-Code/Low-Code Automation</span>
-                    <span class="competency-tag">Psychological Frameworks</span>
-                    <span class="competency-tag">Cognitive Science</span>
-                    <span class="competency-tag">Full-Cycle Media Production</span>
-					<span class="competency-tag">GenAI</span>
+            <!-- NEW & RESTRUCTURED SECTION -->
+            <section class="prompt-engineering-skills">
+                <h2>Prompt Engineering & AI Skills</h2>
+                <div class="job-item">
+                    <h3>Core Techniques & Approach</h3>
+                    <ul>
+                        <li>Practical experience in prompt design: crafting instructions for one-shot, few-shot, and Chain-of-Thought reasoning.</li>
+                        <li>Ability to design prompts that produce structured outputs (e.g., JSON, categorized text) aligned with business metrics and human scoring.</li>
+                        <li>Leverages M.A. in Psychology to create nuance- and empathy-driven prompts, particularly for analyzing conversational data.</li>
+                    </ul>
+                </div>
+                <div class="job-item">
+                    <h3>Frameworks & Automation</h3>
+                    <ul>
+                        <li>Experience with no-code/low-code automation tools (n8n, Make) and API orchestration via Postman.</li>
+                        <li>Developing foundational skills in Python for API interaction and exploring agentic frameworks like LangChain and CrewAI.</li>
+                    </ul>
                 </div>
             </section>
 
@@ -285,9 +288,9 @@
                     <h3>AI Content Strategist & Workflow Designer | <span class="company">Freelance</span></h3>
                     <p class="date">2023 - Present</p>
                     <ul>
-                        <li>Engineered, tested and implemented complex multi-step prompt chains for video / image  generation pipelines, translating narrative scripts into precise visual instructions for AI models (Runway, Kling, Luma).</li>
-                        <li>Pioneered novel workflows combining multiple AI tools to speed up production processes and achieve faster full-cycle content creation pipelines with specific artistic styles.</li>
-                        <li>Acted as an AI consultant for a creative studio, developing a photorealistic character generation workflow in ComfyUI (+3 tools) and producing high-quality batches for commercial projects.</li>
+                        <li>Engineered and tested multi-step prompt chains for GenAI video/image pipelines, translating narrative scripts into precise visual instructions.</li>
+                        <li>Pioneered novel workflows combining multiple AI tools to accelerate content creation and maintain specific artistic styles.</li>
+                        <li>Acted as an AI consultant for a creative studio, developing a photorealistic character generation workflow in ComfyUI (+3 tools).</li>
                     </ul>
                 </div>
                 
@@ -295,8 +298,8 @@
                     <h3>Business Developer | <span class="company">Flymy.ai (AI Startup)</span></h3>
                     <p class="date">2024</p>
                     <ul>
-                        <li>With main responsibilities in first Partnership communications.</li>
-                        <li>Automated market research by building no-code parsers to scrape and analyze data from over 4,000 startups, identifying potential B2B clients.</li>
+                        <li>Responsible for initial partnership communications and outreach.</li>
+                        <li>Automated market research by building no-code parsers to scrape and analyze data from over 4,000 startups.</li>
                     </ul>
                 </div>
 
@@ -304,9 +307,8 @@
                     <h3>Video Production Director / Senior Editor | <span class="company">Natus Vincere (NAVI)</span></h3>
                     <p class="date">2017 - 2023</p>
                     <ul>
-                        <li>Directed and edited high-impact brand films and documentaries that garnered millions of views, shaping the brand's narrative during its peak growth period.</li>
-                        <li>Applied storytelling and drama principles to craft compelling narratives that fostered a deep emotional connection with a global audience.</li>
-                        <li>Managed the full post-production cycle for major sponsor collaborations (Logitech, Puma, AMD), ensuring alignment with brand values and partner expectations.</li>
+                        <li>Directed and edited high-impact brand films and documentaries that garnered millions of views, shaping the brand's narrative.</li>
+                        <li>Applied storytelling and drama principles to foster a deep emotional connection with a global audience.</li>
                     </ul>
                 </div>
                 
@@ -315,7 +317,7 @@
                     <p class="date">2016 - Present</p>
                     <ul>
                         <li>Conducted one-on-one consulting sessions focusing on personal challenges and interpersonal dynamics.</li>
-                        <li>Led a series of lectures on neuropsychophysiology and emotional intelligence, translating complex psychological concepts into accessible and practical knowledge.</li>
+                        <li>Led lectures on neuropsychophysiology and emotional intelligence, translating complex psychological concepts into accessible knowledge.</li>
                     </ul>
                 </div>
             </section>
@@ -325,13 +327,13 @@
                  <div class="job-item">
                     <h3>PTSD Support Chatbot Prototype</h3>
                     <ul>
-                        <li>Prototyped an empathetic chatbot using GPT-4 to provide initial emotional support for military personnel. Prompts were designed to guide conversations safely, de-escalate anxiety, and offer stabilization techniques based on cognitive-behavioral principles.</li>
+                        <li>Prototyped an empathetic chatbot using GPT-4 to provide initial emotional support. Prompts were designed to guide conversations safely and offer stabilization techniques based on cognitive-behavioral principles.</li>
                     </ul>
                 </div>
                  <div class="job-item">
                     <h3>CCD (Cycle of Conscious Decisions) Algorithm</h3>
                     <ul>
-                        <li>Developed a proprietary prompt-engineering methodology for one-shot generation of deeply structured, high-quality responses from LLMs, optimizing for reasoning over token count.</li>
+                        <li>Developed a proprietary prompt-engineering methodology for generating structured, high-quality responses from LLMs.</li>
                     </ul>
                 </div>
             </section>
