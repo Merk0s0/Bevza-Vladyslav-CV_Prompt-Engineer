@@ -1,359 +1,548 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ADDED: Meta tags for SEO and Social Sharing -->
-    <meta name="description" content="The CV of Vladyslav Bevza, an AI Prompt Engineer and Creative Technologist specializing in human-centered AI.">
-    <meta property="og:title" content="CV: Vladyslav Bevza - AI Prompt Engineer">
-    <meta property="og:description" content="Specializing in translating complex human concepts into structured AI outputs.">
-    <meta property="og:image" content="https://i.postimg.cc/Fsgq9MJg/1721313573084.jpg">
-    <meta property="og:url" content="https://bevza-vladyslav.github.io/Bevza-Vladyslav-CV_Prompt-Engineer/">
-    <meta name="twitter:card" content="summary_large_image">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vladyslav Bevza — CV (Podcast Manager / Media Producer)</title>
 
-    <title>CV: AI Prompt Engineer & Creative Technologist</title>
-    
-    <!-- ADDED: Preconnect for Google Fonts performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <style>
-        :root {
-            --bg-gradient-start: #1a1a2e;
-            --bg-gradient-end: #16213e;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --text-primary: #e0e0e0;
-            --text-secondary: #b5b5c5; 
-            --accent: #0f8b8d;
-            --accent-light: #58a6ff;
-            --border-color: rgba(255, 255, 255, 0.1);
-        }
+  <style>
+    :root{
+      --bg: #f8fafc;            /* light, readable */
+      --paper: #ffffff;
+      --text: #0f172a;          /* slate-900 */
+      --muted: #475569;         /* slate-600 */
+      --line: rgba(15,23,42,.08);
+      --chip: #eef2ff;          /* indigo-50 */
+      --chip-text:#3730a3;      /* indigo-800 */
+      --grad-a:#6366f1;         /* indigo-500 */
+      --grad-b:#14b8a6;         /* teal-500 */
+      --grad-c:#06b6d4;         /* cyan-500 */
+      --shadow: 0 6px 30px rgba(2,6,23,.06);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(99,102,241,.3)}
+    a:hover{border-color:rgba(20,184,166,.5)}
+    .wrap{max-width:980px;margin:40px auto;padding:0 18px}
 
-        html {
-            scroll-behavior: smooth;
-        }
+    /* Header */
+    .card{
+      background:linear-gradient(180deg,#fff, #fff) padding-box,
+                 linear-gradient(135deg,var(--grad-a),var(--grad-c),var(--grad-b)) border-box;
+      border:1px solid transparent;border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+    .header{
+      display:flex;align-items:flex-start;gap:16px;padding:20px 20px;
+      position:relative;overflow:hidden;
+    }
+    .header::after{
+      content:"";position:absolute;inset:auto -40% -60% -40%;height:200px;
+      background:radial-gradient(1200px 140px at 50% 0%, rgba(99,102,241,.15), rgba(20,184,166,.10), transparent 70%);
+      pointer-events:none;filter:blur(20px)
+    }
+    .name{
+      font-weight:700;font-size:clamp(22px,4vw,30px);line-height:1.2;
+      background:linear-gradient(90deg,var(--grad-a),var(--grad-b));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      letter-spacing:.2px
+    }
+    .role{color:var(--muted);font-weight:500;margin-top:4px}
+    .contacts{margin-top:10px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--chip);color:var(--chip-text);font-size:12px;font-weight:600}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-end), var(--bg-gradient-start));
-            color: var(--text-primary);
-            margin: 0;
-            padding: 30px 15px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            font-size: 16px; 
-            line-height: 1.6;
-        }
+    /* Lang switcher */
+    .lang-switch{
+      position:absolute;top:16px;right:16px;display:flex;gap:8px;
+      background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;
+      box-shadow:0 4px 18px rgba(2,6,23,.05)
+    }
+    .lang-btn{
+      padding:6px 10px;border-radius:999px;border:none;background:transparent;cursor:pointer;
+      font-weight:600;color:var(--muted)
+    }
+    .lang-btn.active{background:linear-gradient(90deg,var(--grad-a),var(--grad-b));color:#fff}
 
-        .resume-container {
-            max-width: 900px;
-            width: 100%;
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
-            animation: fadeIn 1s ease-out;
-        }
+    /* Sections */
+    .section{padding:22px 20px;border-top:1px solid var(--line)}
+    .section:first-of-type{border-top:none}
+    .sec-title{
+      font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);
+      margin:0 0 14px 0;font-weight:700
+    }
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .full{grid-column:1 / -1}
+    @media (max-width:820px){.grid{grid-template-columns:1fr}}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .item{padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}
+    .item h3{margin:0 0 4px 0;font-size:15.5px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0}
 
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
+    .pill{display:inline-block;padding:5px 9px;font-size:12px;background:#f1f5f9;color:#0f172a;border-radius:999px;margin:4px 6px 0 0;border:1px solid var(--line)}
+    .links a{display:inline-block;margin-right:12px;margin-top:6px}
 
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            animation: popIn 0.5s ease-out 0.5s both;
-            flex-shrink: 0;
-        }
+    /* Footer note */
+    .note{font-size:12.5px;color:var(--muted)}
 
-        @keyframes popIn {
-            from { transform: scale(0); }
-            to { transform: scale(1); }
-        }
-
-        .header-info h1 {
-            margin: 0;
-            font-size: 2.25rem;
-            color: #ffffff;
-            line-height: 1.2;
-        }
-
-        .header-info .title {
-            margin: 5px 0 15px;
-            font-size: 1.125rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .contact-info a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            margin-right: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-light);
-        }
-
-        section {
-            margin-bottom: 30px;
-            animation: slideUp 0.7s ease-out forwards;
-            opacity: 0;
-        }
-        
-        section:nth-of-type(1) { animation-delay: 0.2s; }
-        section:nth-of-type(2) { animation-delay: 0.3s; }
-        section:nth-of-type(3) { animation-delay: 0.4s; }
-        section:nth-of-type(4) { animation-delay: 0.5s; }
-        section:nth-of-type(5) { animation-delay: 0.6s; }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            color: var(--accent-light);
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        .profile-text {
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .job-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 2px solid var(--border-color);
-            transition: border-color 0.3s ease;
-        }
-        
-        .job-item:hover {
-            border-left: 2px solid var(--accent);
-        }
-
-        .job-item h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
-            color: var(--text-primary);
-        }
-
-        .job-item .company {
-            color: var(--accent-light);
-            font-weight: 500;
-        }
-        
-        .job-item .date {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .job-item ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        .job-item li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-        
-        .languages p {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            body { padding: 20px 10px; align-items: flex-start; }
-            .resume-container { padding: 25px; }
-            .header { flex-direction: column; text-align: center; gap: 20px; }
-            .profile-photo { width: 100px; height: 100px; }
-            .header-info h1 { font-size: 1.8rem; }
-            .header-info .title { font-size: 1rem; }
-            h2 { font-size: 1.3rem; }
-            .job-item h3 { font-size: 1rem; }
-        }
-
-        /* ADDED: Print-friendly styles */
-        @media print {
-            body {
-                background: none;
-                color: #000;
-                padding: 0;
-                font-size: 12pt;
-            }
-            .resume-container {
-                box-shadow: none;
-                border: none;
-                padding: 0;
-                backdrop-filter: none;
-            }
-            .header, .job-item {
-                border-color: #ccc;
-            }
-            .profile-photo {
-                border-color: #000;
-            }
-            h1, h2, h3, .job-item .company {
-                color: #000;
-            }
-            section {
-                animation: none;
-                opacity: 1;
-            }
-            a {
-                color: #000;
-                text-decoration: none;
-            }
-            .contact-info a::after {
-                content: " (" attr(href) ")";
-            }
-        }
-    </style>
+    /* Animations (very subtle) */
+    @keyframes rise{
+      from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none}
+    }
+    .header,.section,.item{animation:rise .6s ease both}
+    .section{animation-delay:.03s}
+    .item{animation-delay:.06s}
+    @media (prefers-reduced-motion:reduce){
+      .header,.section,.item{animation:none}
+    }
+    /* Language visibility */
+    [data-lang]{display:none}
+    .show-en [data-lang="en"]{display:block}
+    .show-uk [data-lang="uk"]{display:block}
+  </style>
 </head>
-<body>
+<body class="show-en">
 
-    <div class="resume-container">
-        <header class="header">
-            <img src="https://i.postimg.cc/Fsgq9MJg/1721313573084.jpg" alt="Profile Photo" class="profile-photo">
-            <div class="header-info">
-                <h1>Vladyslav Bevza</h1>
-                <p class="title">AI Prompt Engineer & Creative Technologist</p>
-                <div class="contact-info">
-                    <a href="mailto:merkoforua@gmail.com">merkoforua@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/merkosoul/" target="_blank">LinkedIn</a>
-                </div>
+  <div class="wrap">
+    <header class="card header">
+      <div class="lang-switch" aria-label="Language switch">
+        <button class="lang-btn active" data-select="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-select="uk" aria-pressed="false">УКР</button>
+      </div>
+
+      <div style="flex:1">
+        <!-- EN Header -->
+        <div data-lang="en">
+          <div class="name">Vladyslav Bevza</div>
+          <div class="role">Media producer & editor with strong audio background • Applying for Podcast Manager (Fintech Garden)</div>
+          <div class="contacts">
+            <span class="chip">Email: <a href="mailto:merkoforua@gmail.com">merkoforua@gmail.com</a></span>
+            <span class="chip">Location: Romania • open to Budapest trips</span>
+          </div>
+        </div>
+        <!-- UK Header -->
+        <div data-lang="uk">
+          <div class="name">Владислав Бевза</div>
+          <div class="role">Медіапродюсер та монтажер зі звуковою базою • Заявка: Podcast Manager (Fintech Garden)</div>
+          <div class="contacts">
+            <span class="chip">Email: <a href="mailto:merkoforua@gmail.com">merkoforua@gmail.com</a></span>
+            <span class="chip">Локація: Румунія • можливі відрядження до Будапешта</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="card">
+      <!-- SUMMARY -->
+      <section class="section">
+        <h2 class="sec-title" data-lang="en">Summary</h2>
+        <div data-lang="en">
+          <p class="item" style="margin:0">
+            I work with long-form video/audio, interviews, and brand content. I can plan, record, edit, and ship episodes on a schedule.
+            I keep communication simple, document decisions, and avoid over-promising. Comfortable coordinating guests, editors, and designers.
+            I use basic analytics to learn and improve. English—fluent.
+          </p>
+        </div>
+
+        <h2 class="sec-title" data-lang="uk">Коротко</h2>
+        <div data-lang="uk">
+          <p class="item" style="margin:0">
+            Працюю з довгими форматами відео/аудіо, інтерв’ю та бренд-контентом. Можу планувати, записувати, монтувати й випускати епізоди за графіком.
+            Комунікація проста, рішення фіксую, обіцянок зайвих не даю. Звичний до координації гостей, редакторів і дизайнерів.
+            Використовую базову аналітику для покращень. Англійська — вільно.
+          </p>
+        </div>
+      </section>
+
+      <!-- CORE FIT -->
+      <section class="section">
+        <h2 class="sec-title" data-lang="en">Fit for Podcast Manager</h2>
+        <div class="grid">
+          <div class="item" data-lang="en">
+            <h3>Production & operations</h3>
+            <ul class="list">
+              <li>Built episode workflows end-to-end: prep → record → edit → publish.</li>
+              <li>Kept rolling content calendars; aligned with team and partners.</li>
+              <li>Handled review cycles and final QC to avoid bottlenecks.</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="en">
+            <h3>Editorial & guests</h3>
+            <ul class="list">
+              <li>Prepared interview outlines, adjusted topics to guest expertise.</li>
+              <li>Coordinated availability and simple briefing packs.</li>
+              <li>Extracted clips and quotes for social channels.</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="en">
+            <h3>Distribution & growth</h3>
+            <ul class="list">
+              <li>Posted to website and YouTube; maintained episode pages (audio, embeds, summary, guest info, CTA).</li>
+              <li>Used basic analytics (YouTube Studio / web) to compare formats and retention.</li>
+              <li>Set up small paid boosts when needed; watched ROI simply.</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="en">
+            <h3>People & vendors</h3>
+            <ul class="list">
+              <li>Briefed editors clearly; coordinated with designers and writers.</li>
+              <li>Worked with sponsors/partners on co-promo materials.</li>
+              <li>Kept files neat (naming, versioning, delivery packs).</li>
+            </ul>
+          </div>
+
+          <!-- UKR mirrors -->
+          <div class="item" data-lang="uk">
+            <h3>Виробництво та операційка</h3>
+            <ul class="list">
+              <li>Повний цикл епізоду: підготовка → запис → монтаж → публікація.</li>
+              <li>Вів календар контенту; синхронізувався з командою та партнерами.</li>
+              <li>Контролював рев’ю та фінальний QC без «вузьких місць».</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="uk">
+            <h3>Редактура та гості</h3>
+            <ul class="list">
+              <li>Готував план інтерв’ю, підлаштовував теми під експертизу гостя.</li>
+              <li>Координував слоти та короткі бріфи.</li>
+              <li>Виділяв кліпи й цитати для соцмереж.</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="uk">
+            <h3>Дистрибуція та ріст</h3>
+            <ul class="list">
+              <li>Публікації на сайт і YouTube; сторінки епізодів (аудіо, вбудовування, самарі, гість, CTA).</li>
+              <li>Базова аналітика (YouTube Studio / веб) для порівняння форматів.</li>
+              <li>Невеликі промо-бюджети за потреби; просте відстеження ROI.</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="uk">
+            <h3>Люди та підрядники</h3>
+            <ul class="list">
+              <li>Чіткі бриф-задачі редакторам; координація з дизайнерами та копірайтерами.</li>
+              <li>Співпраця зі спонсорами/партнерами щодо ко-прому.</li>
+              <li>Акуратні файли (неймінг, версії, пакети на віддачу).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section">
+        <h2 class="sec-title" data-lang="en">Experience</h2>
+        <div class="grid">
+          <div class="item full" data-lang="en">
+            <h3>Natus Vincere (NAVi) — Video Editor / Post-Director</h3>
+            <div class="meta">2017–2022 • Kyiv (hybrid)</div>
+            <ul class="list">
+              <li>Edited and finished long-form interviews, documentaries, and brand pieces; mixed VO/music/SFX.</li>
+              <li>Coordinated shoots with players, sponsors, and internal teams; handled review cycles to deadline.</li>
+              <li>Examples (public): <a href="https://youtu.be/R-5PrnwUSD0">s1mple — 5 years with NAVI</a>, <a href="https://youtu.be/73XWJbOwRJ0">Dendi tribute</a>, <a href="https://youtu.be/fVdzL8m5SjI">Logitech spot</a>, <a href="https://youtu.be/XlabQUqsXKU">Apparel collab</a>, <a href="https://youtu.be/nHd9ZP4n88E">Puma collab</a>.</li>
+            </ul>
+          </div>
+
+          <div class="item" data-lang="en">
+            <h3>Independent / Volunteer Media Projects — Producer & Editor</h3>
+            <div class="meta">2016–2025 • Remote</div>
+            <ul class="list">
+              <li>Planned and delivered interviews, event coverage, and educational content (part under NDA).</li>
+              <li>Worked as sound designer and colorist for branded videos (e.g., <a href="https://youtu.be/4OcNJLGvu4o">John Deere UA</a>).</li>
+            </ul>
+          </div>
+
+          <div class="item" data-lang="en">
+            <h3>FlyMy.AI — Business Development (contract)</h3>
+            <div class="meta">2022 • Remote</div>
+            <ul class="list">
+              <li>No-code/low-code data collection; mapped AI feature needs; supported outreach and demos.</li>
+            </ul>
+          </div>
+
+          <div class="item full" data-lang="en">
+            <h3>AI-assisted Content (freelance)</h3>
+            <div class="meta">2023–2024 • Remote</div>
+            <ul class="list">
+              <li>Set up simple pipelines for clip generation and asset prep; experimented with tools (Runway, SD, Flux, etc.).</li>
+              <li>Edited narrative/educational videos for a crypto team; coordinated scripts, shoots, and delivery.</li>
+            </ul>
+          </div>
+
+          <!-- UKR -->
+          <div class="item full" data-lang="uk">
+            <h3>Natus Vincere (NAVi) — Відеомонтажер / режисер пост-продакшну</h3>
+            <div class="meta">2017–2022 • Київ (гібрид)</div>
+            <ul class="list">
+              <li>Монтаж інтерв’ю, доку та бренд-роликів; зведення VO/музики/SFX.</li>
+              <li>Координація знімальних днів із гравцями, спонсорами та командами; контроль рев’ю й дедлайнів.</li>
+              <li>Публічні приклади: <a href="https://youtu.be/R-5PrnwUSD0">s1mple — 5 років з NAVI</a>, <a href="https://youtu.be/73XWJbOwRJ0">Dendi tribute</a>, <a href="https://youtu.be/fVdzL8m5SjI">Logitech</a>, <a href="https://youtu.be/XlabQUqsXKU">Колекція одягу</a>, <a href="https://youtu.be/nHd9ZP4n88E">Puma</a>.</li>
+            </ul>
+          </div>
+
+          <div class="item" data-lang="uk">
+            <h3>Незалежні / волонтерські медіапроєкти — продюсер і монтажер</h3>
+            <div class="meta">2016–2025 • Віддалено</div>
+            <ul class="list">
+              <li>Планування та випуск інтерв’ю, івент-контенту, освітніх матеріалів (частина під NDA).</li>
+              <li>Звукодизайн і колір для бренд-відео (напр., <a href="https://youtu.be/4OcNJLGvu4o">John Deere UA</a>).</li>
+            </ul>
+          </div>
+
+          <div class="item" data-lang="uk">
+            <h3>FlyMy.AI — Біздев (контракт)</h3>
+            <div class="meta">2022 • Віддалено</div>
+            <ul class="list">
+              <li>No-code/low-code збір даних; опис потреб AI-фіч; саппорт аутрічу та демо.</li>
+            </ul>
+          </div>
+
+          <div class="item full" data-lang="uk">
+            <h3>AI-контент (фриланс)</h3>
+            <div class="meta">2023–2024 • Віддалено</div>
+            <ul class="list">
+              <li>Прості пайплайни для кліпів та ассетів; експерименти з інструментами (Runway, SD, Flux тощо).</li>
+              <li>Монтаж наративних/освітніх відео для криптокоманди; координація сценаріїв, зйомок та дедлайнів.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS / TOOLS -->
+      <section class="section">
+        <h2 class="sec-title" data-lang="en">Skills & Tools</h2>
+        <div class="grid">
+          <div class="item" data-lang="en">
+            <h3>Production</h3>
+            <div class="meta">planning • scheduling • briefs • basic budgets</div>
+            <div>
+              <span class="pill">Editorial calendars</span>
+              <span class="pill">Guest coordination</span>
+              <span class="pill">Clip extraction</span>
+              <span class="pill">Episode pages</span>
             </div>
-        </header>
+          </div>
+          <div class="item" data-lang="en">
+            <h3>Post</h3>
+            <div class="meta">editing • sound • color</div>
+            <div>
+              <span class="pill">Premiere Pro</span>
+              <span class="pill">Audition</span>
+              <span class="pill">After Effects</span>
+              <span class="pill">DaVinci Resolve</span>
+              <span class="pill">Ableton (basic)</span>
+            </div>
+          </div>
+          <div class="item" data-lang="en">
+            <h3>Tools</h3>
+            <div>
+              <span class="pill">Google Calendar</span>
+              <span class="pill">Jira (basic)</span>
+              <span class="pill">Confluence (basic)</span>
+              <span class="pill">Notion</span>
+              <span class="pill">Riverside (basic)</span>
+            </div>
+          </div>
+          <div class="item" data-lang="en">
+            <h3>Analytics</h3>
+            <div>
+              <span class="pill">YouTube Studio</span>
+              <span class="pill">Web basics</span>
+            </div>
+          </div>
 
-        <main>
-            <section class="profile">
-                <h2>Profile</h2>
-                <p class="profile-text">
-                    An enthusiastic and analytical AI Prompt Engineer with a background in Psychology (M.A.) and wide media production experience. Specializes in translating complex concepts into structured, clear brand communication and audience impression. Passionate about building human-centered AI tools that bridge technology and human development.
-					<br><br>
-					Well-versed in the startup ecosystem, I am highly effective and comfortable in fast-paced, ever-changing environments.
-				</p>
-            </section>
+          <!-- UKR -->
+          <div class="item" data-lang="uk">
+            <h3>Виробництво</h3>
+            <div class="meta">планування • графік • брифінги • базові бюджети</div>
+            <div>
+              <span class="pill">Редакційний календар</span>
+              <span class="pill">Координація гостей</span>
+              <span class="pill">Кліпи для соцмереж</span>
+              <span class="pill">Сторінки епізодів</span>
+            </div>
+          </div>
+          <div class="item" data-lang="uk">
+            <h3>Пост-продакшн</h3>
+            <div class="meta">монтаж • звук • колір</div>
+            <div>
+              <span class="pill">Premiere Pro</span>
+              <span class="pill">Audition</span>
+              <span class="pill">After Effects</span>
+              <span class="pill">DaVinci Resolve</span>
+              <span class="pill">Ableton (basic)</span>
+            </div>
+          </div>
+          <div class="item" data-lang="uk">
+            <h3>Інструменти</h3>
+            <div>
+              <span class="pill">Google Calendar</span>
+              <span class="pill">Jira (basic)</span>
+              <span class="pill">Confluence (basic)</span>
+              <span class="pill">Notion</span>
+              <span class="pill">Riverside (basic)</span>
+            </div>
+          </div>
+          <div class="item" data-lang="uk">
+            <h3>Аналітика</h3>
+            <div>
+              <span class="pill">YouTube Studio</span>
+              <span class="pill">Базовий веб-аналіз</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- NEW & RESTRUCTURED SECTION -->
-            <section class="prompt-engineering-skills">
-                <h2>Prompt Engineering & AI Skills</h2>
-                <div class="job-item">
-                    <h3>Core Techniques & Approach</h3>
-                    <ul>
-                        <li>Practical experience in prompt design: crafting instructions for one-shot, few-shot, and Chain-of-Thought reasoning, along with an understanding of the obsolescence of these techniques in current LLM generation models. </li>
-                        <li>Leverages M.A. in Psychology to create nuance- and empathy-driven prompts, particularly for analyzing conversational data.</li>
-                    </ul>
-                </div>
-                <div class="job-item">
-                    <h3>Frameworks & Automation</h3>
-                    <ul>
-                        <li>Experience with no-code/low-code automation tools (n8n, Make) and API orchestration via Postman.</li>
-                        <li>Developing foundational skills in Python for API interaction and exploring agentic frameworks like LangChain and CrewAI.</li>
-                    </ul>
-                </div>
-            </section>
+      <!-- APPLICATION QUESTION -->
+      <section class="section">
+        <h2 class="sec-title" data-lang="en">Application — short answer</h2>
+        <div class="item" data-lang="en">
+          <h3>How guest collaboration can extend value beyond the episode</h3>
+          <p style="margin:8px 0 0">
+            I don’t have my own podcast case to cite. In branded interviews I worked on, co-promotion with the guest’s channels and partners increased reach noticeably.
+            For a podcast, I would keep it simple:
+          </p>
+          <ul class="list">
+            <li>Plan 2–3 guest-specific moments during prep that can stand alone as clips.</li>
+            <li>Within a week after recording, deliver a small clip-pack to the guest (vertical cuts, quote cards, captions).</li>
+            <li>Align on a calendar: guest warms up audience → episode day → follow-up clips for both sides.</li>
+            <li>Publish a short written summary (blog/Medium) for SEO and an email snippet for partners.</li>
+            <li>Light paid boost for one clip to a focused niche; watch retention and iterate.</li>
+          </ul>
+          <p class="note">This is pragmatic: minimal extra work, clear assets for the guest, and measurable lift without over-promising.</p>
+        </div>
 
-            <section class="experience">
-                <h2>Professional Experience</h2>
+        <h2 class="sec-title" data-lang="uk">Заявка — коротка відповідь</h2>
+        <div class="item" data-lang="uk">
+          <h3>Як співпраця з гостем дає додаткову цінність поза епізодом</h3>
+          <p style="margin:8px 0 0">
+            Власного кейсу подкасту не наведу. У бренд-інтерв’ю ко-промо з каналами гостя та партнерів помітно підвищувало охоплення.
+            Для подкасту діяв би так:
+          </p>
+          <ul class="list">
+            <li>На етапі підготовки закласти 2–3 «самостійні» моменти під кліпи.</li>
+            <li>За тиждень після запису віддати гостю невеликий пакет кліпів (вертикаль, цитати, субтитри).</li>
+            <li>Узгодити календар: розігрів → день епізоду → пост-кліпи з обох сторін.</li>
+            <li>Короткий конспект (блог/Medium) для SEO та e-mail-вирізка для партнерів.</li>
+            <li>Невелике платне підсилення одного кліпу на нішеву аудиторію; дивитись утримання і коригувати.</li>
+          </ul>
+          <p class="note">Підхід приземлений: мінімум зайвого, чіткі активи для гостя, вимірюваний ефект без завищених обіцянок.</p>
+        </div>
+      </section>
 
-                <div class="job-item">
-                    <h3>AI Content Strategist & Workflow Designer | <span class="company">Freelance</span></h3>
-                    <p class="date">2023 - Present</p>
-                    <ul>
-                        <li>Engineered and tested multi-step prompt chains for GenAI video/image pipelines, translating narrative scripts into precise visual instructions.</li>
-                        <li>Pioneered novel workflows combining multiple AI tools to accelerate content creation and maintain specific artistic styles.</li>
-                        <li>Acted as an AI consultant for a creative studio, developing a photorealistic character generation workflow in ComfyUI (+3 tools).</li>
-                    </ul>
-                </div>
-                
-                <div class="job-item">
-                    <h3>Business Developer | <span class="company">Flymy.ai (AI Startup)</span></h3>
-                    <p class="date">2024</p>
-                    <ul>
-                        <li>Responsible for initial partnership communications and outreach.</li>
-                        <li>Automated market research by building no-code parsers to scrape and analyze data from over 4,000 startups.</li>
-                    </ul>
-                </div>
+      <!-- EDUCATION & LANGS -->
+      <section class="section">
+        <h2 class="sec-title" data-lang="en">Education & Languages</h2>
+        <div class="grid">
+          <div class="item" data-lang="en">
+            <h3>M.A. Psychology</h3>
+            <div class="meta">2018</div>
+            <ul class="list">
+              <li>Public talks on relationships and neuro-psychophysiology (school lectures, 9–11 grades).</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="en">
+            <h3>Languages</h3>
+            <ul class="list">
+              <li>English — fluent (spoken/written).</li>
+              <li>Ukrainian — native.</li>
+              <li>Russian — fluent.</li>
+            </ul>
+          </div>
 
-                <div class="job-item">
-                    <h3>Video Production Director / Senior Editor | <span class="company">Natus Vincere (NAVI)</span></h3>
-                    <p class="date">2017 - 2023</p>
-                    <ul>
-                        <li>Directed and edited high-impact brand films and documentaries that garnered millions of views, shaping the brand's narrative.</li>
-                        <li>Applied storytelling and drama principles to foster a deep emotional connection with a global audience.</li>
-                    </ul>
-                </div>
-                
-                 <div class="job-item">
-                    <h3>Psychological Consultant | <span class="company">Private Practice (Part-Time)</span></h3>
-                    <p class="date">2016 - Present</p>
-                    <ul>
-                        <li>Conducted one-on-one consulting sessions focusing on personal challenges and interpersonal dynamics.</li>
-                        <li>Led lectures on neuropsychophysiology and emotional intelligence, translating complex psychological concepts into accessible knowledge.</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section class="projects">
-                <h2>Independent AI Projects</h2>
-                 <div class="job-item">
-                    <h3>PTSD Support Chatbot Prototype</h3>
-                    <ul>
-                        <li>Prototyped an empathetic chatbot using GPT-4 to provide initial emotional support. Prompts were designed to guide conversations safely and offer stabilization techniques based on cognitive-behavioral principles.</li>
-                    </ul>
-                </div>
-                 <div class="job-item">
-                    <h3>CCD (Cycle of Conscious Decisions) Algorithm</h3>
-                    <ul>
-                        <li>Developed a proprietary prompt-engineering methodology for generating structured, high-quality responses from LLMs.</li>
-                    </ul>
-                </div>
-            </section>
+          <div class="item" data-lang="uk">
+            <h3>Магістр психології</h3>
+            <div class="meta">2018</div>
+            <ul class="list">
+              <li>Публічні лекції з відносин і нейропсихофізіології (школи, 9–11 класи).</li>
+            </ul>
+          </div>
+          <div class="item" data-lang="uk">
+            <h3>Мови</h3>
+            <ul class="list">
+              <li>Англійська — вільно (усно/письмово).</li>
+              <li>Українська — рідна.</li>
+              <li>Російська — вільно.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-            <section class="education">
-                <h2>Education</h2>
-                 <div class="job-item">
-                    <h3>Master of Arts in Psychology</h3>
-                    <p class="date">Kamianets-Podіlskyi Ivan Ohiienko National University | 2018</p>
-                </div>
-            </section>
-            
-             <section class="languages">
-                <h2>Languages</h2>
-                <p><strong>English:</strong> Fluent (C1)</p>
-                <p><strong>Ukrainian:</strong> Native</p>
-                <p><strong>Russian:</strong> Native</p>
-            </section>
+      <!-- LINKS -->
+      <section class="section">
+        <h2 class="sec-title" data-lang="en">Selected Public Work</h2>
+        <div class="item links" data-lang="en">
+          <a href="https://youtu.be/R-5PrnwUSD0">s1mple — 5 years with NAVI</a>
+          <a href="https://youtu.be/73XWJbOwRJ0">Dendi — tribute</a>
+          <a href="https://youtu.be/fVdzL8m5SjI">Logitech x NAVI (spot)</a>
+          <a href="https://youtu.be/XlabQUqsXKU">NAVI apparel collab</a>
+          <a href="https://youtu.be/nHd9ZP4n88E">Puma x NAVI</a>
+          <a href="https://youtu.be/4OcNJLGvu4o">John Deere (color)</a>
+        </div>
 
-        </main>
-    </div>
+        <h2 class="sec-title" data-lang="uk">Публічні роботи</h2>
+        <div class="item links" data-lang="uk">
+          <a href="https://youtu.be/R-5PrnwUSD0">s1mple — 5 років з NAVI</a>
+          <a href="https://youtu.be/73XWJbOwRJ0">Dendi — трибут</a>
+          <a href="https://youtu.be/fVdzL8m5SjI">Logitech x NAVI (спот)</a>
+          <a href="https://youtu.be/XlabQUqsXKU">Колаборація одягу NAVI</a>
+          <a href="https://youtu.be/nHd9ZP4n88E">Puma x NAVI</a>
+          <a href="https://youtu.be/4OcNJLGvu4o">John Deere (колір)</a>
+        </div>
+      </section>
 
+      <!-- FOOTER NOTE -->
+      <section class="section">
+        <div class="note" data-lang="en">
+          I’m looking for stable, clear work. Normal hours are important. I can travel to Budapest when needed.
+        </div>
+        <div class="note" data-lang="uk">
+          Шукаю стабільну, зрозумілу роботу. Важливий нормальний робочий графік. Можу їздити у відрядження до Будапешта за потреби.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      const root = document.body;
+      const btns = document.querySelectorAll('.lang-btn');
+      const saved = localStorage.getItem('cv_lang');
+      if(saved === 'uk'){ setLang('uk'); }
+
+      btns.forEach(b=>{
+        b.addEventListener('click', ()=>{
+          setLang(b.dataset.select);
+        });
+      });
+
+      function setLang(code){
+        if(code==='uk'){
+          root.classList.remove('show-en');
+          root.classList.add('show-uk');
+          toggleActive('uk');
+          localStorage.setItem('cv_lang','uk');
+          document.documentElement.lang = 'uk';
+        }else{
+          root.classList.remove('show-uk');
+          root.classList.add('show-en');
+          toggleActive('en');
+          localStorage.setItem('cv_lang','en');
+          document.documentElement.lang = 'en';
+        }
+      }
+      function toggleActive(code){
+        document.querySelectorAll('.lang-btn').forEach(x=>{
+          const on = x.dataset.select===code;
+          x.classList.toggle('active', on);
+          x.setAttribute('aria-pressed', on ? 'true':'false');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
