@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Vladyslav Bevza — Podcast / Content Ops</title>
+  <title>Vladyslav Bevza — Media Production</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
@@ -51,7 +51,7 @@
 
     .hero{
       margin:18px auto 14px; padding:18px 16px 6px;
-      display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;
+      display:flex;align-items:flex-start;justify-content:space-between;/* gap:16px; */ flex-wrap:wrap;
     }
     .hero h1{margin:4px 0 6px;font-size:28px;font-weight:600;letter-spacing:.2px}
     .role{
@@ -62,6 +62,32 @@
       display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;
       background:linear-gradient(135deg,var(--accent-2-from),var(--accent-2-to));color:white;margin-top:6px
     }
+    .hero-main {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        /* margin-right: 16px; */ /* Отступ справа от фото - теперь через gap */
+        flex-shrink: 0; /* Чтобы фото не сжималось */
+        border: 2px solid var(--line);
+        box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+    @media (max-width: 720px) {
+        .hero-main {
+            gap: 12px;
+        }
+        .profile-photo {
+            width: 80px;
+            height: 80px;
+            /* margin-right: 12px; */ /* теперь через gap */
+        }
+    }
+
 
     .grid{display:grid;grid-template-columns:1fr;gap:14px}
     .section{
@@ -110,6 +136,7 @@
       .section{box-shadow:none;border-color:#ddd}
       .lang-switch,.print-btn,.badge,.dot{display:none}
       body{background:white}
+      .profile-photo {display: block; width: 80px; height: 80px; margin-right: 12px; border: 1px solid #ccc; box-shadow: none;}
     }
   </style>
 </head>
@@ -129,19 +156,21 @@
   </header>
 
   <main class="wrap">
-    <!-- EN -->
-    <section class="lang lang-en show" lang="en" aria-label="English Version">
+    <!-- EN --><section class="lang lang-en show" lang="en" aria-label="English Version">
       <div class="hero">
-        <div>
-          <h1>Vladyslav Bevza</h1>
-          <p class="role">Podcast / Content Operations · Long-form audio & video</p>
-          <div class="badge">Fluent English · UA</div>
-          <p class="contact" style="margin-top:6px">
-            <strong>Email:</strong> <a href="mailto:merkoforua@gmail.com">merkoforua@gmail.com</a>
-          </p>
+        <div class="hero-main">
+          <img src="https://i.postimg.cc/Fsgq9MJg/1721313573084.jpg" alt="Vladyslav Bevza" class="profile-photo">
+          <div>
+            <h1>Vladyslav Bevza</h1>
+            <p class="role">Media Production / Content Specialist</p>
+            <div class="badge">Fluent English · Based in Europe</div>
+            <p class="contact" style="margin-top:6px">
+              <strong>Email:</strong> <a href="mailto:merkoforua@gmail.com">merkofoforua@gmail.com</a>
+            </p>
+          </div>
         </div>
         <div class="mono">
-          Minimal, factual CV. No portfolio assembled; a few public links below.
+          Factual CV. Portfolio is not assembled; a few public links are below.
         </div>
       </div>
 
@@ -149,66 +178,53 @@
         <section class="section">
           <h2 class="hline">Summary</h2>
           <p>
-            Media specialist focused on end-to-end production for long-form audio/video. I handle planning, guest prep,
-            editing, sound, and simple web updates. I keep expectations realistic and deliver at a steady pace.
+            Media specialist with over 6 years of experience in the end-to-end production of video and audio content. Skilled in concept development, post-production (editing, color, sound), and on-set supervision. Accustomed to dynamic, creative environments and practical use of AI tools in workflows.
           </p>
         </section>
 
         <section class="section">
-          <h2 class="hline">Match for “Podcast Manager at Fintech Garden” (by tasks)</h2>
-          <ul class="list-tight">
-            <li>Keep a rolling 3-month episode plan and update it on time.</li>
-            <li>Coordinate prep → record → edit → publish with shared checklists.</li>
-            <li>Prepare guest briefs and questions (depth + a few hooks for clips).</li>
-            <li>Give clear briefs to editors/contractors and run short review cycles.</li>
-            <li>Update the episode page (audio, YouTube embed, summary, guest info, CTA).</li>
-            <li>Repurpose into short clips, quote cards, and a short write-up.</li>
-            <li>Watch basic analytics and suggest small, practical adjustments.</li>
-          </ul>
-          <p class="footnote">
-            Tools note: I haven’t used Jira/Confluence/Riverside before; I can adopt them if needed. Google Calendar — used regularly.
-          </p>
-        </section>
-
-        <section class="section">
-          <h2 class="hline">Relevant Experience</h2>
+          <h2 class="hline">Professional Experience</h2>
           <div class="two-col">
             <div>
-              <h3 style="margin:0 0 4px">Natus Vincere (media team)</h3>
-              <p class="muted" style="margin:0 0 6px">Video editing · Sound design · Color · On-set & post</p>
+              <h3 style="margin:0 0 4px">Natus Vincere (Media Team)</h3>
+              <p class="muted" style="margin:0 0 6px">Video Production Specialist (2016 - 2022)</p>
               <ul class="list-tight">
-                <li>Delivered interviews, promos, sponsor segments, and team stories for YouTube.</li>
-                <li>Owned edits, SFX, audio cleanup/mix, and final delivery.</li>
-                <li>Worked with talent and small crews; prepared hand-offs for motion/graphics.</li>
-                <li>Public examples include tributes and brand collaborations (links below).</li>
+                <li>Co-managed content schedules and production for YouTube channels (CS:GO, Dota 2, R6, PUBG), ensuring consistent output.</li>
+                <li>Directed and executed full post-production cycles: from concept/scripting to editing, color grading, sound design (SFX, mixing), and final delivery.</li>
+                <li>Developed and directed key content, including tributes (s1mple, Dendi), sponsored projects (Logitech, Puma, AMD), and moviemaker collaborations (NAVI Clutch).</li>
+                <li>Worked on-set, supervising audio and collaborating with players and crews.</li>
               </ul>
             </div>
             <div>
-              <h3 style="margin:0 0 4px">Freelance / contract</h3>
-              <p class="muted" style="margin:0 0 6px">Long-form interviews, ads, events, light motion</p>
+              <h3 style="margin:0 0 4px">Freelance / Project-based</h3>
+              <p class="muted" style="margin:0 0 6px">Content Specialist & AI Workflow Developer (2022 - Present)</p>
               <ul class="list-tight">
-                <li>Multi-hour interview production (recording, edit, color, sound).</li>
-                <li>Clients: Decision Telecom (expo loops), John Deere (color), Horsch (product videos).</li>
-                <li>Coordinated small teams and remote vendors on time-boxed tasks.</li>
+                <li>Provided content strategy, scripting, and post-production for various clients (e.g., John Deere, Horsch).</li>
+                <li>Developed and implemented experimental, AI-driven production pipelines for complex video projects (NDA).</li>
+                <li>Directed a 30-min international project, integrating greenscreen talent with full 3D environments (Blender) in a high-end studio setting (NDA).</li>
+                <li>Managed small project teams and delegated tasks for post-production and animation.</li>
+                <li>Provided sound design and audio mixing services for media projects.</li>
               </ul>
             </div>
           </div>
           <div class="two-col" style="margin-top:8px">
             <div>
-              <h3 style="margin:0 0 4px">LLM / light ops automation</h3>
-              <p class="muted" style="margin:0 0 6px">No-code helpers for content workflows</p>
+              <h3 style="margin:0 0 4px">AI R&D / Business Development</h3>
+              <p class="muted" style="margin:0 0 6px">FlyMy.AI (BizDev) & Personal Projects</p>
               <ul class="list-tight">
-                <li>No-code scrapers/parsers (YouTube/IG/TikTok Shorts) for clip scouting and research.</li>
-                <li>Chat-assistants for prompt chains (writing clip captions; draft outlines).</li>
-                <li>Basic RAG for notes/briefs to speed guest/topic prep.</li>
+                <li>As BizDev at FlyMy.AI, connected with startups, gathered technical requirements, and bridged product/dev teams.</li>
+                <li>Developed no-code/low-code solutions (parsers, RAG) for content research and workflow automation.</li>
+                <li>Extensive hands-on research and testing of generative AI tools (video, audio, text) for production pipelines.</li>
+                <li>Practical experience in prompt engineering for effective task execution.</li>
               </ul>
             </div>
             <div>
-              <h3 style="margin:0 0 4px">Teaching / community</h3>
+              <h3 style="margin:0 0 4px">Teaching / Community</h3>
               <p class="muted" style="margin:0 0 6px">Occasional lectures and course facilitation</p>
               <ul class="list-tight">
-                <li>Intro sessions on editing and neuro-/cog basics for learners (public talks).</li>
-                <li>Comfortable speaking and running structured sessions.</li>
+                <li>Led courses and personal sessions on video editing.</li>
+                <li>Delivered lectures on neuropsychophysiology for high school students.</li>
+                <li>Comfortable with public speaking and running structured sessions.</li>
               </ul>
             </div>
           </div>
@@ -221,55 +237,46 @@
             <a href="https://youtu.be/73XWJbOwRJ0" target="_blank" rel="noopener noreferrer">Dendi tribute</a>
             <a href="https://youtu.be/fVdzL8m5SjI" target="_blank" rel="noopener noreferrer">Logitech × Perfecto (promo)</a>
             <a href="https://youtu.be/XlabQUqsXKU" target="_blank" rel="noopener noreferrer">NAVI × Schneider apparel</a>
-            <a href="https://youtu.be/Xtnv3aMKKhY" target="_blank" rel="noopener noreferrer">Venus Vincere (women’s apparel)</a>
+            <a href="https://youtu.be/JU_cgV3AJ5k" target="_blank" rel="noopener noreferrer">LandTech (Colorist)</a>
             <a href="https://youtu.be/IAL7q9k3ifE" target="_blank" rel="noopener noreferrer">Rainbow Six content example</a>
           </div>
-          <p class="footnote">Full portfolio is not assembled.</p>
+          <p class="footnote">Full portfolio is not assembled. Additional links available on request.</p>
         </section>
 
         <section class="section">
-          <h2 class="hline">Skills</h2>
+          <h2 class="hline">Skills & Tools</h2>
           <div class="kvs">
             <div>
-              <p><strong>Core</strong></p>
+              <p><strong>Core Skills</strong></p>
               <ul class="list-tight">
-                <li>Episode planning & guest prep</li>
-                <li>Audio editing, cleanup, mixing, SFX</li>
-                <li>Editorial review & hand-offs</li>
-                <li>Clip extraction and short copy for social</li>
-                <li>Simple CMS/HTML updates for episode pages</li>
-                <li>Basic competitive checks and analytics</li>
+                <li>Content & Script Development</li>
+                <li>Video Post-Production (Editing, Color Grading)</li>
+                <li>Sound Design (SFX, Audio Cleanup, Mixing)</li>
+                <li>On-Set Direction & Audio Supervision</li>
+                <li>AI-driven Production Workflows</li>
+                <li>Team Coordination & Handoffs</li>
               </ul>
             </div>
             <div>
-              <p><strong>Tools</strong></p>
+              <p><strong>Primary Tools</strong></p>
               <ul class="list-tight">
-                <li>Premiere Pro, After Effects, DaVinci Resolve</li>
-                <li>Audition/Reaper; Ableton (for sound tasks)</li>
-                <li>Google Workspace; basic Notion/Sheets</li>
-                <li>Riverside — not used before; ok to adopt</li>
-                <li>Jira/Confluence — not used before; ok to adopt</li>
+                <li>Adobe Premiere Pro, After Effects</li>
+                <li>Adobe Audition</li>
+                <li>DaVinci Resolve (incl. Fairlight)</li>
+                <li>FL Studio</li>
+                <li>Blender (Basic)</li>
+                <li>Generative AI Tools (Midjourney, Runway, Kling, Suno, etc.)</li>
+                <li>Familiar with project tools (can adapt to Jira/Riverside).</li>
               </ul>
             </div>
           </div>
-        </section>
-
-        <section class="section">
-          <h2 class="hline">Application question — short answer (for the form)</h2>
-          <p class="muted">Prompt: “Give an example of a podcast where guest collaboration led to value beyond the episode. How would you replicate it?”</p>
-          <p>
-            In niche B2B shows, collaborating with guests who run active channels extends reach. In the script, I mix deeper questions with a few clear hooks for short clips.
-            Right after recording, I spend a week producing clips for the guest’s channels so they warm up their audience and set a date. Alongside the episode, I publish a short
-            write-up (blog/Medium) and 3–4 quote cards, with a light paid push on 1–2 clips. Every few months I compile insights into a short “summary/trends” episode.
-            At Fintech Garden I’d keep this as a template with a shared brief, shared clip folder, a 3-month timeline, and a small line for distribution tests.
-          </p>
         </section>
 
         <section class="section">
           <h2 class="hline">Education & Languages</h2>
           <ul class="list-tight">
             <li>MA in Psychology (2018)</li>
-            <li>Languages: English (fluent), Ukrainian (native)</li>
+            <li>Languages: English (fluent), Ukrainian (native), Russian (native)</li>
           </ul>
         </section>
 
@@ -277,25 +284,27 @@
           <h2 class="hline">Logistics</h2>
           <ul class="list-tight">
             <li>Work rhythm: steady pace, clear scope, daytime schedule.</li>
-            <li>Travel: occasional trips to Budapest are possible if required.</li>
+            <li>Based in Europe; open to remote work and global travel.</li>
           </ul>
         </section>
       </div>
     </section>
 
-    <!-- UKR -->
-    <section class="lang lang-uk" lang="uk" aria-label="Українська версія">
+    <!-- UKR --><section class="lang lang-uk" lang="uk" aria-label="Українська версія">
       <div class="hero">
-        <div>
-          <h1>Владислав Бевза</h1>
-          <p class="role">Подкаст / контент-операції · Довгі формати аудіо й відео</p>
-          <div class="badge">Вільна англійська · UA</div>
-          <p class="contact" style="margin-top:6px">
-            <strong>Email:</strong> <a href="mailto:merkoforua@gmail.com">merkoforua@gmail.com</a>
-          </p>
+        <div class="hero-main">
+          <img src="https://i.postimg.cc/Fsgq9MJg/1721313573084.jpg" alt="Владислав Бевза" class="profile-photo">
+          <div>
+            <h1>Владислав Бевза</h1>
+            <p class="role">Медіавиробництво / Спеціаліст з контенту</p>
+            <div class="badge">Вільна англійська · В Європі</div>
+            <p class="contact" style="margin-top:6px">
+              <strong>Email:</strong> <a href="mailto:merkoforua@gmail.com">merkoforua@gmail.com</a>
+            </p>
+          </div>
         </div>
         <div class="mono">
-          Мінімальне, фактологічне CV. Портфоліо не зібране; нижче — кілька публічних посилань.
+          Фактологічне CV. Портфоліо не зібране; нижче — кілька публічних посилань.
         </div>
       </div>
 
@@ -303,135 +312,113 @@
         <section class="section">
           <h2 class="hline">Коротко</h2>
           <p>
-            Працюю з повним циклом довгих аудіо/відео форматів. Звичний до планування, підготовки гостей,
-            постпродакшену та простих оновлень на сайті. Працюю рівно та в узгодженому обсязі.
+            Медіаспеціаліст із досвідом понад 6 років у повному циклі виробництва відео- та аудіоконтенту. Маю навички у розробці концепцій, постпродакшені (монтаж, колір, звук) та роботі на знімальному майданчику. Звик до динамічного, творчого середовища та практичного використання AI-інструментів у робочих процесах.
           </p>
         </section>
 
         <section class="section">
-          <h2 class="hline">Відповідність ролі “Podcast Manager at Fintech Garden”</h2>
-          <ul class="list-tight">
-            <li>Планування календаря випусків на 3 місяці.</li>
-            <li>Координація етапів prep → record → edit → publish через спільні чек-листи.</li>
-            <li>Бріфи для гостей і тем; питання на глибину і на короткі кліпи.</li>
-            <li>Бріфи для підрядників/редакторів та спокійні рев’ю-цикли без заторів.</li>
-            <li>Сторінка епізоду: аудіо, вбудоване відео, самері, гість, CTA.</li>
-            <li>Перепакування: кліпи, картки-цитати, короткий текст у блог/Medium.</li>
-            <li>Перевірка базових метрик і невеликі, практичні зміни у форматі.</li>
-          </ul>
-          <p class="footnote">
-            Нотатка щодо інструментів: Jira/Confluence раніше не використовував. За потреби зможу додати в робочий стек. Google Calendar — у щоденній роботі.
-          </p>
-        </section>
-
-        <section class="section">
-          <h2 class="hline">Доречний досвід</h2>
+          <h2 class="hline">Професійний досвід</h2>
           <div class="two-col">
             <div>
-              <h3 style="margin:0 0 4px">Natus Vincere (медійна команда)</h3>
-              <p class="muted" style="margin:0 0 6px">Монтаж · Саунд-дизайн · Колір · Знімальний майданчик і пост</p>
+              <h3 style="margin:0 0 4px">Natus Vincere (Медіакоманда)</h3>
+              <p class="muted" style="margin:0 0 6px">Спеціаліст з відеовиробництва (2016 - 2022)</p>
               <ul class="list-tight">
-                <li>Інтерв’ю, промо, спонсорські ролики, історії команд для YouTube.</li>
-                <li>Таймлайни монтажу, SFX, чистка/зведення звуку, фінальна здача.</li>
-                <li>Робота з талантом і невеликими командами; бріфи для моушн/графіки.</li>
-                <li>Публічні роботи: триб’юти, бренд-колаборації, лайн-дропи (посилання нижче).</li>
+                <li>Спільно з колегою керував графіками контенту та виробництвом для YouTube-каналів (CS:GO, Dota 2, R6, PUBG).</li>
+                <li>Керував та виконував повний цикл постпродакшену: від концепції/сценарію до монтажу, корекції кольору, саунд-дизайну (SFX, зведення) та фінальної здачі.</li>
+                <li>Розробляв та режисував ключовий контент: триб'юти (s1mple, Dendi), спонсорські проєкти (Logitech, Puma, AMD) та колаборації з мувімейкерами (NAVI Clutch).</li>
+                <li>Працював на знімальному майданчику, контролюючи аудіо та співпрацюючи з гравцями та командами.</li>
               </ul>
             </div>
             <div>
-              <h3 style="margin:0 0 4px">Фриланс / підряди</h3>
-              <p class="muted" style="margin:0 0 6px">Довгі інтерв’ю, реклама, івенти, легкий моушн</p>
+              <h3 style="margin:0 0 4px">Фриланс / Проєктна робота</h3>
+              <p class="muted" style="margin:0 0 6px">Спеціаліст з контенту & AI (2022 - Дотепер)</p>
               <ul class="list-tight">
-                <li>Багатогодинні інтерв’ю (зйомка, монтаж, колір, звук).</li>
-                <li>Клієнти: Decision Telecom (екранні петлі для виставок), John Deere (колір), Horsch (продуктові відео).</li>
-                <li>Координація невеликих команд і віддалених підрядників.</li>
+                <li>Надавав послуги з контент-стратегії, написання сценаріїв та постпродакшену для різних клієнтів (напр., John Deere, Horsch).</li>
+                <li>Розробляв та впроваджував експериментальні виробничі процеси на основі AI для складних відеопроєктів (NDA).</li>
+                <li>Режисував 30-хвилинний міжнародний проєкт, поєднуючи зйомки на хромакеї з повним 3D-оточенням (Blender) у high-end студії (NDA).</li>
+                <li>Керував невеликими проєктними командами та делегував завдання з постпродакшену та анімації.</li>
+                <li>Надавав послуги саунд-дизайну та зведення звуку для медіапроєктів.</li>
               </ul>
             </div>
           </div>
           <div class="two-col" style="margin-top:8px">
             <div>
-              <h3 style="margin:0 0 4px">LLM / легка автоматика</h3>
-              <p class="muted" style="margin:0 0 6px">No-code інструменти для контент-процесів</p>
+              <h3 style="margin:0 0 4px">AI R&D / Business Development</h3>
+              <p class="muted" style="margin:0 0 6px">FlyMy.AI (BizDev) & Власні проєкти</p>
               <ul class="list-tight">
-                <li>Парсери YouTube/IG/TikTok Shorts для кліп-скаутингу та ресерчу.</li>
-                <li>Чат-асистенти для промт-ланцюжків (тексти для кліпів; чернетки структур).</li>
-                <li>Простий RAG для нотаток/бріфів — прискорення підготовки гостя/тем.</li>
+                <li>Як BizDev у FlyMy.AI, налагоджував зв'язки зі стартапами, збирав технічні вимоги та поєднував команди продукту та розробки.</li>
+                <li>Розробляв no-code/low-code рішення (парсери, RAG) для дослідження контенту та автоматизації процесів.</li>
+                <li>Проводив глибоке практичне дослідження та тестування генеративних AI-інструментів (відео, аудіо, текст).</li>
+                <li>Практичний досвід у промт-інжинірингу для ефективного виконання завдань.</li>
               </ul>
             </div>
             <div>
-              <h3 style="margin:0 0 4px">Навчання / ком’юніті</h3>
+              <h3 style="margin:0 0 4px">Викладання / Спільнота</h3>
               <p class="muted" style="margin:0 0 6px">Лекції та фасилітація курсів</p>
               <ul class="list-tight">
-                <li>Публічні сесії з монтажу та баз нейро/когнітивних тем.</li>
-                <li>Спокійно почуваюся з публічними виступами та структурованими сесіями.</li>
+                <li>Проводив курси та індивідуальні сесії з відеомонтажу.</li>
+                <li>Читав лекції з нейропсихофізіології для старшокласників та студентів.</li>
+                <li>Вільно почуваюся під час публічних виступів та проведення структурованих занять.</li>
               </ul>
             </div>
           </div>
         </section>
 
         <section class="section">
-          <h2 class="hline">Публічні посилання</h2>
+          <h2 class="hline">Вибрані публічні посилання</h2>
           <div class="links">
-            <a href="https://youtu.be/R-5PrnwUSD0" target="_blank" rel="noopener noreferrer">s1mple — 5 років з NAVI (док/триб’ют)</a>
-            <a href="https://youtu.be/73XWJbOwRJ0" target="_blank" rel="noopener noreferrer">Триб’ют Dendi</a>
+            <a href="https://youtu.be/R-5PrnwUSD0" target="_blank" rel="noopener noreferrer">s1mple — 5 років з NAVI (док/триб'ют)</a>
+            <a href="https://youtu.be/73XWJbOwRJ0" target="_blank" rel="noopener noreferrer">Триб'ют Dendi</a>
             <a href="https://youtu.be/fVdzL8m5SjI" target="_blank" rel="noopener noreferrer">Logitech × Perfecto (промо)</a>
             <a href="https://youtu.be/XlabQUqsXKU" target="_blank" rel="noopener noreferrer">NAVI × Schneider (одяг)</a>
-            <a href="https://youtu.be/Xtnv3aMKKhY" target="_blank" rel="noopener noreferrer">Venus Vincere (жіноча колекція)</a>
+            <a href="https://youtu.be/JU_cgV3AJ5k" target="_blank" rel="noopener noreferrer">LandTech (Колорист)</a>
             <a href="https://youtu.be/IAL7q9k3ifE" target="_blank" rel="noopener noreferrer">Приклад контенту Rainbow Six</a>
           </div>
-          <p class="footnote">Повного портфоліо немає.</p>
+          <p class="footnote">Повне портфоліо не зібране. Додаткові посилання – за запитом.</p>
         </section>
 
         <section class="section">
-          <h2 class="hline">Навички</h2>
+          <h2 class="hline">Навички та Інструменти</h2>
           <div class="kvs">
             <div>
-              <p><strong>Основні</strong></p>
+              <p><strong>Основні навички</strong></p>
               <ul class="list-tight">
-                <li>Планування випусків і підготовка гостей</li>
-                <li>Редагування аудіо, чистка, зведення, SFX</li>
-                <li>Редакційні рев’ю та передачі між ролями</li>
-                <li>Вирізання кліпів і короткі тексти для соцмереж</li>
-                <li>Прості оновлення CMS/HTML сторінок епізодів</li>
-                <li>Легка аналітика та конкурентні перегляди</li>
+                <li>Розробка концепцій та сценаріїв</li>
+                <li>Відео постпродакшн (монтаж, колір)</li>
+                <li>Саунд-дизайн (SFX, чистка та зведення аудіо)</li>
+                <li>Режисура на майданчику та контроль звуку</li>
+                <li>Виробничі процеси з використанням AI</li>
+                <li>Координація команди та передача завдань</li>
               </ul>
             </div>
             <div>
-              <p><strong>Інструменти</strong></p>
+              <p><strong>Основні інструменти</strong></p>
               <ul class="list-tight">
-                <li>Premiere Pro, After Effects, DaVinci Resolve</li>
-                <li>Audition/Reaper; Ableton (для звуку)</li>
-                <li>Google Workspace; базовий Notion/Sheets</li>
-                <li>Riverside — формально не використовував; за потреби додам</li>
-                <li>Jira/Confluence — не використовував; за потреби додам</li>
+                <li>Adobe Premiere Pro, After Effects</li>
+                <li>Adobe Audition</li>
+                <li>DaVinci Resolve (вкл. Fairlight)</li>
+                <li>FL Studio</li>
+                <li>Blender (Базовий)</li>
+                <li>Генеративні AI-інструменти (Midjourney, Runway, Kling, Suno тощо)</li>
+                <li>Знайомий з інструментами (можу адаптуватися до Jira/Riverside).</li>
               </ul>
             </div>
           </div>
-        </section>
-
-        <section class="section">
-          <h2 class="hline">Запитання від рекрутера — коротка відповідь</h2>
-          <p class="muted">Тема: «Приклад, коли співпраця з гостем дала додаткову цінність поза межами епізоду. Як це повторити?»</p>
-          <p>
-            У вузьких B2B подкастах найпростіше — гості з активними каналами. У сценарії змішую глибші питання з кількома чіткими «гачками» під короткі кліпи.
-            Одразу після запису тиждень роблю кліпи для каналів гостя, щоб він підігрів аудиторію і назвав дату. Паралельно до епізоду — короткий текст (блог/Medium)
-            і 3–4 картки-цитати з легким платним пушем 1–2 кліпів. Кожні кілька місяців роблю короткий випуск «summary/trends». У Fintech Garden тримаю це як шаблон:
-            спільний бріф, спільна папка з кліпами, 3-місячний таймлайн і невеликий бюджет на тести дистрибуції.
-          </p>
         </section>
 
         <section class="section">
           <h2 class="hline">Освіта та мови</h2>
           <ul class="list-tight">
             <li>Магістр психології (2018)</li>
-            <li>Мови: англійська (вільно), українська (рідна)</li>
+            <li>Мови: англійська (вільно), українська (рідна), російська (рідна)</li>
           </ul>
         </section>
 
         <section class="section">
           <h2 class="hline">Логістика</h2>
           <ul class="list-tight">
-            <li>Темп роботи: рівномірно, чіткий обсяг, денний графік.</li>
-            <li>Подорожі: епізодичні поїздки до Будапешта можливі за потреби.</li>
+            <li>Темп роботи: стабільний, чіткий обсяг, денний графік.</li>
+            <li>Знаходжуся в Європі; відкритий до віддаленої роботи та подорожей.</li>
           </ul>
         </section>
       </div>
